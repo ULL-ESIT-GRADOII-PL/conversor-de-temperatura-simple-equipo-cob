@@ -1,25 +1,38 @@
 {
-  "dependencies": {
-  },
-  "devDependencies": {
-    "chai": "*",
-    "mocha": "*"
-  },
-  "name": "temperature",
-  "description": "ETSII ULL Grado de Informatica",
+  "name": "conversor-de-temperatura-simple-equipo-cob",
   "version": "1.0.0",
-  "main": "temperature.js",
-  "directories": {
-    "test": "tests"
-  },
+  "description": "Second exercice of subject Language of processors.",
+  "main": "./js/main.js",
   "scripts": {
-    "test": "open tests/index.html # mac OS"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@bitbucket.org/casiano/pl-grado-temperature-converter.git"
+    "url": "git+https://github.com/ctc87/conversor-de-temperatura-simple-equipo-cob.git"
   },
-  "author": "Casiano",
+  "keywords": [
+    "css",
+    "html",
+    "javascript"
+  ],
+  "author": { 
+    "name": "Carlos Troyano Carmona"
+    "email": "carlos.troyano.carmona@gmail.es"
+  }
+  
+  "contributors": [{
+    "name": "Oscar Catari Gutierrez",
+    "email": "alu0100825893@ull.edu.es"
+  },{
+    "name": "Rubén Labrador Páez",
+    "email": "alu0100309553@ull.edu.es"
+  }],
   "license": "ISC",
-  "homepage": "https://github.com/crguezl/ull-etsii-grado-pl-1213-temperature-converter/tree/gh-pages"
+  "bugs": {
+    "url": "https://github.com/ctc87/conversor-de-temperatura-simple-equipo-cob/issues"
+  },
+  "homepage": "https://github.com/ctc87/conversor-de-temperatura-simple-equipo-cob#readme",
+  "dependencies": {
+    "normalize.css": "^3.0.3"
+  }
 }
