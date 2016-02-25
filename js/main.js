@@ -1,6 +1,6 @@
+"use strict"; /** Use ECMAScript 5 strict mode in browsers that support it */
 /** Variables globales */
 var arrayResults = []
-"use strict"; /** Use ECMAScript 5 strict mode in browsers that support it */
 
 /** cambiando opacidad de las fotos textos  */
 
@@ -41,6 +41,7 @@ function ocultarMostrarTags(focus) {
             $(".conversorDeTemperaturaTest").hide(500);
         }
         if(focus.id == "e3") {
+            // window.open("../tests/index.html");
             $(".contendeorImagenesEnlace").hide(500);
             $(".conversorDeTemperatura").hide(500);
             $(".conversorDeTemperaturaTest").show(500);
@@ -65,7 +66,9 @@ function addEventInput(input) {
         if (input[0].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
             var value = this.value;
             value = value.toString();
-            var tTemp = value.charAt(value.length - 1)
+            var tTemp = value.charAt(value.length - 1);
+            arrayResults = calculate(this); /* global calculate */ 
+            selectChangeInput(arrayResults, "left");
             inputChangeSelect(tTemp, "left");
         } 
     });
@@ -74,8 +77,10 @@ function addEventInput(input) {
         if (input[1].validity.patternMismatch == false) { /** comprobando si coicide con el atributo pattern */
             var value = this.value;
             value = value.toString();
-            var tTemp = value.charAt(value.length - 1)
-            inputChangeSelect(tTemp, "right");
+            var tTemp = value.charAt(value.length - 1);
+            arrayResults = calculate(this); /* global calculate */
+            inputChangeSelect(tTemp, "right"); 
+            selectChangeInput(arrayResults, "right");
         } 
     });
 
@@ -125,23 +130,25 @@ function inputChangeSelect(char, direction) {
 
     /** arr = [c ,f, k]  */
 function selectChangeInput(arr, direction) {
-    var char = arr[0].charAt(arr[0].length - 1).toLocaleLowerCase();
-    var selectValue;
-    var input;
-    if(direction == "left") {
-        input = document.getElementsByClassName("InputTemperatura")[1];
-        selectValue = document.getElementsByClassName("select")[1].value;
-    }
-    else if(direction == "right") {
-        input = document.getElementsByClassName("InputTemperatura")[0];
-        selectValue = document.getElementsByClassName("select")[0].value;
-    }
-    if(selectValue == "Grado Celsius") {
-        input.value = arr[0];
-    } else if (selectValue == "Grado Fahrenheit") {
-        input.value = arr[1];
-    } else if (selectValue == "Grado Kelvin") {
-        input.value = arr[2];
+    if(arr.length > 1) {
+        var char = arr[0].charAt(arr[0].length - 1).toLocaleLowerCase();
+        var selectValue;
+        var input;
+        if(direction == "left") {
+            input = document.getElementsByClassName("InputTemperatura")[1];
+            selectValue = document.getElementsByClassName("select")[1].value;
+        }
+        else if(direction == "right") {
+            input = document.getElementsByClassName("InputTemperatura")[0];
+            selectValue = document.getElementsByClassName("select")[0].value;
+        }
+        if(selectValue == "Grado Celsius") {
+            input.value = arr[0];
+        } else if (selectValue == "Grado Fahrenheit") {
+            input.value = arr[1];
+        } else if (selectValue == "Grado Kelvin") {
+            input.value = arr[2];
+        }
     }
 }
 

@@ -17,8 +17,7 @@
   ],
   "author": { 
     "name": "Carlos Troyano Carmona"
-    "email": "carlos.troyano.carmona@gmail.es"
-  }
+  },
   
   "contributors": [{
     "name": "Oscar Catari Gutierrez",
@@ -34,5 +33,5 @@
   "homepage": "https://github.com/ctc87/conversor-de-temperatura-simple-equipo-cob#readme",
   "dependencies": {
     "normalize.css": "^3.0.3"
-  }
+  }  
 }
